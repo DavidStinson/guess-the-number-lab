@@ -6,9 +6,9 @@ const game = {
   // Initialize prevGuesses as an array
   prevGuesses: [],
   play: function () {
-    // MORE BONUS: set the smallestNum and biggestNum
+    // MORE BONUS: call the setRange method set the smallestNum and biggestNum
     this.setRange()
-    // Get the secretNum
+    // Get the secretNum from the range
     this.secretNum =
       Math.floor(Math.random() * (this.biggestNum - this.smallestNum + 1)) +
       this.smallestNum;
@@ -16,9 +16,9 @@ const game = {
     do {
       // Get the player's valid guess and push it into the prevGuesses array
       this.prevGuesses.push(this.getGuess());
-      // BONUS: reset the range after a guess is made
+      // BONUS: Call the resetRange method, reset the range after a guess is made
       this.resetRange();
-      // Render the result of the player's guess
+      // Call the render method and render the result of the player's guess
       this.render();
       // If the player's last guess was not the secretNum, do it all again!
     } while (this.prevGuesses[this.prevGuesses.length - 1] !== this.secretNum);
